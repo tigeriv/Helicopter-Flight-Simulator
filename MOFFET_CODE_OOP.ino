@@ -197,13 +197,13 @@ void individualSample() //Sample of each of the motors for a couple seconds
   for (int i = 0; i < 10; i++)
   {
     gantryUD->moveDirectionA(); //Move direction A for 2 seconds
-    delay(200);
+    delay(100);
   }
   gantryUD->stopMotor();
   for (int i = 0; i < 10; i++)
   {
     gantryUD->moveDirectionB(); //Move direction B for 2 seconds
-    delay(200);
+    delay(100);
   }
   gantryUD->stopMotor();
   //Commented out because not working
@@ -263,11 +263,11 @@ void checkGantryUD() //If UD buttons are pushed, moves Up or Down
   rollServo.write(posR);
   if (digitalRead(GUB) == HIGH && digitalRead(GDB) == LOW)
   {
-    gantryUD->moveDirectionA();
+    gantryUD->moveDirectionB();
   }
   else if (digitalRead(GDB) == HIGH && digitalRead(GUB) == LOW)
   {
-    gantryUD->moveDirectionB();
+    gantryUD->moveDirectionA();
   }
   else
   {
